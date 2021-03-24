@@ -1,0 +1,21 @@
+
+.btn{
+    min-width: 50px;
+}
+.btn svg{
+    fill: var(--secondary);
+}
+.col{
+    height: 100%;
+    position: relative;
+}
+.input{
+    max-width: 50px;
+    margin-left: 20px !important;
+    margin-right: 20px !important;
+}
+.avatar{
+    width: 40px;
+    border: 1px solid #00000024;
+    border-radius: 50px;
+}

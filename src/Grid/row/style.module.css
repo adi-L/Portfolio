@@ -1,0 +1,6 @@
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(var(--bs-gutter-y) * -1);
+    width: 100%;
+}

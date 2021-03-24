@@ -1,0 +1,63 @@
+.main {
+    width: 100vw;
+    height: 100vh;
+    background-color: #EEF1FA;
+}
+.mobileHeader{
+    box-shadow: 0px 1px     20px 4px rgb(17 16 62 / 12%);
+    width: 30px;
+    height: 7px;
+    max-width: 30px !important;
+    background: #adadad;
+    border-radius: 5px;
+
+}
+.mobileFooter{
+    width: 20px;
+    height: 20px;
+    max-width: 20px  !important;
+    box-shadow: 0px 1px     20px 4px rgb(17 16 62 / 12%);
+    border-radius: 50px;
+    background: #adadad;
+}
+.content {
+    width: 100%;
+    height: calc(100% - 80px);
+    overflow: hidden;
+    overflow-y: hidden;
+    position: relative;
+}
+
+.page {
+    height: calc(100% - 180px);
+    width: 100%;
+    max-width: 90vw;
+    border-radius: 5px;
+    margin: auto;
+    background-color: #fff;
+    box-shadow: 0 24px 62px 20px rgb(17 16 62 / 12%);
+    margin-top: 40px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    overflow: hidden;
+}
+
+.header {
+    box-shadow: 1px 1px 1px rgb(33 33 33 / 10%);
+    width: 100%;
+    background: #ffffffd4;
+    height: 40px;
+}
+.footer{
+    box-shadow: -2px -1px 1px rgb(33 33 33 / 10%);
+    height: 60px;
+    background: #ffffffd4;
+    width: 100%;
+
+}
+.dot1 {
+    border-radius: 50px;
+    background: #adadad;
+    height: 10px;
+    max-width: 10px !important;
+}

@@ -1,0 +1,21 @@
+.main{
+padding: 10px 15px;
+direction: ltr;
+}
+.main button{
+    height: var( --editor-input-height);
+}
+.btn{
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    min-width: 70px;
+}
+.dd{
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    width: 25px;
+    border-right-color: #fff !important;
+}
+.dd:hover{
+    border-right-color: #fff !important;
+}
