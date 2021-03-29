@@ -1,9 +1,9 @@
-import classes from './style.module.css';
 import style from '!!raw-loader!./style.demo.css';
 import { Hooks } from '../../components/hooks/hooks';
-import { Button } from '../../components/Buttons/ButtonV2/Buttons';
 import { Dropdown } from '../../components/Dropdowns/dropdownV1/Dropdown';
 import { Heading } from '../../components/heading/heading';
+import Row from '../../Grid/row/row';
+import Col from '../../Grid/cols/Col';
 
 export const Demo = (props) => {
     const { querySelector } = props;
@@ -24,17 +24,17 @@ export const Demo = (props) => {
             <div className="selected-block adi-block">
 
                 <div className="selected-element ">
-
                     <h1 className="heading-h1 block-element ">
                         Hello I'm <span className="text-primary">Adi L.</span><br />
                     </h1>
                     <p className="block-element ">And I'm a Web Developer</p>
                     <Dropdown pose="top" color="primary" className="about-me-btn" title="About Me">
                         <div className="about-me-modal">
-                            <Heading>
-                                Hi, I'm Adi,
-              </Heading>
-              <p>
+                            <Row justify="end" alignItems="center">
+                            <Heading style={{color:"var(--primary)"}}>Hi I'm Adi,</Heading>
+                            </Row>
+                            <div style={{margin:"30px 0"}}>
+                            <p>
               I have passion for creating a dynamic user experience. 
            
               </p>
@@ -44,6 +44,13 @@ export const Demo = (props) => {
               <p>
               I love turning a complex problem into simple intuitive Solutions.
               </p>
+                                </div> 
+             
+              <Row  justify="end" >
+                  <Col title="coffee" sm={1}>☕ |</Col>
+                  <Col title="code"  sm={1}>👨‍💻 |</Col>
+                  <Col title="music"  sm={1}>🎵</Col>
+              </Row>
                         </div>
                     </Dropdown>
                     <div className="dot dot-top-left"></div>
@@ -79,10 +86,10 @@ export const Demo = (props) => {
         document.body.querySelector(`#${id}`)?.remove();
         const rect = selectedElement.getBoundingClientRect();
         const rectElement = <div id={id}>
-            <p>{"height:"}{Math.round(rect.height)}{"px"}</p>
-            <p>{"width:"}{Math.round(rect.width)}{"px"}</p>
-            <p>{"left:"}{Math.round(rect.left)}{"px"}</p>
-            <p>{"top:"}{Math.round(rect.top)}{"px"}</p>
+            <p>{"height: "}{Math.round(rect.height)}{"px"}</p>
+            <p>{"width:  "}{Math.round(rect.width)}{"px"}</p>
+            <p>{"left: "}{Math.round(rect.left)}{"px"}</p>
+            <p>{"top: "}{Math.round(rect.top)}{"px"}</p>
             {/* <div className="arrow-right"></div> */}
         </div>
         selectedElement.appendChild(rectElement)

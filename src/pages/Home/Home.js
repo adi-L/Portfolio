@@ -4,7 +4,7 @@ import { Navbar } from "../../components/navbar/navbar"
 import { Page } from '../../components/page/page';
 import Col from "../../Grid/cols/Col";
 import Row from "../../Grid/row/row";
-import { Desktop, Mobile, Tablet } from "../../icons/icons";
+import { Desktop, Mobile, Tablet,Email } from "../../icons/icons";
 import { Demo } from "../demo/demo";
 import classes from './style.module.css';
 import bigHeadSrc from '../../assets/avatars/bighead.svg';
@@ -13,6 +13,7 @@ import { Input } from "../../components/input/input";
 import { Title } from "../../components/Title/Title";
 import { createRef } from "../../../jsx-render/client/client";
 import { Dropdown, Item } from "../../components/Dropdowns/dropdownV1/Dropdown";
+import { Heading } from "../../components/heading/heading";
 
 export const Home = (props) => {
     const pageRef = createRef();
@@ -27,9 +28,11 @@ export const Home = (props) => {
             inputScreenWidth.value = pageRef.element.offsetWidth + "px";
         }} />
         <Navbar >
-            <Row  className="h-100" justify={"end"} alignItems="center">
-                <Col style={{maxWidth:"50px" }} sm={2} lg={1} >
-                    <Row style={{ height: "100%"}} alignItems="center">
+            <Row className="h-100" justify={"end"} alignItems="center">
+                <Col style={{ maxWidth: "50px" }} sm={2} lg={1} >
+                    <Row style={{ height: "100%" }} alignItems="center">
+                        <Col>
+                        </Col>
                         <Col>
                             <img className={classes.avatar} alt="avatar" src={bigHeadSrc} />
                         </Col>
@@ -38,22 +41,32 @@ export const Home = (props) => {
                 <Col sm={4}>
                     <Row className="h-100" justify={"end"} alignItems="center">
                         <Col sm={2}>
-                        <Dropdown   closeOnClick={true} trigger={   <Button color="transparent">
-                                <Title>ABOUT ME</Title>
+                            <Dropdown closeOnClick={true} trigger={<Button color="transparent">
+                                <Title >CONTACT ME</Title>
                             </Button>}>
-                               <Row style={{width:"200px"}}>
-                                <Col>Under Construction</Col>
+
+                                <Row style={{ width: "200px", padding: "10px" }}>
+                                    {/* <Col sm={12}>
+                                        <Heading style={{color:"var(--primary)"}}>Contact</Heading>
+                                    </Col> */}
+                                    <Col sm={12}><a href="mailto:adilev3344@gmail.com">
+                                        <Button style={{ fontSize: "12px", color: "black" }}  color="transparent">
+                                           <Row gap="10px" alignItems="center">
+                                           <Email/> My Email
+                                           </Row>
+                                        </Button>
+                                    </a></Col>
                                 </Row>
                             </Dropdown>
-                         
+
                         </Col>
                         <Col sm={2}>
                             <Dropdown closeOnClick={true} trigger={<Button color="transparent">
                                 <Title>PROJECTS</Title>
                             </Button>}>
-                                <Item onClick={()=>{
+                                <Item onClick={() => {
                                     const a = document.createElement("a");
-                                    a.target="_blank";
+                                    a.target = "_blank";
                                     a.href = "https://www.npmjs.com/package/styleit-api";
                                     a.click();
                                 }}>StyleIt API</Item>
