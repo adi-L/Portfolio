@@ -17,7 +17,7 @@
     padding: .375rem .35rem;
     font-size: var(--editor-font-size);
     line-height: 1.5;
-    border-radius: var(--sm-radius);
+    border-radius: 5px;
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 .btn:disabled{
@@ -47,14 +47,14 @@ select {
 
 .primary {
     color: #fff;
-    background-color:var(--new-ui-primary);
-    border-color: var(--new-ui-primary);
+    background-color:var(--primary);
+    border-color: var(--primary);
 }
 
 .primary:hover {
     color: #fff;
-    background-color: var(--new-ui-primary) !important;
-    border-color: var(--new-ui-primary) !important;
+    background-color: var(--primary) !important;
+    border-color: var(--primary) !important;
 }
 .transparent{
     color: #fff;

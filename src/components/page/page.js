@@ -20,7 +20,7 @@ export const Page = (props) => {
                     </Row>
                 </Col>
             </Row>
-            <div className={classes.content}>
+            <div className={ArrayToString(classes.content,"main-page--adi")}>
                 {props.children}
             </div>
             <div className={classes.footer}>

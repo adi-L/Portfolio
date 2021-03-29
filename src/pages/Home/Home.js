@@ -38,7 +38,7 @@ export const Home = (props) => {
                 <Col sm={4}>
                     <Row className="h-100" justify={"end"} alignItems="center">
                         <Col sm={2}>
-                        <Dropdown   closeOnClick={true} trigger={   <Button>
+                        <Dropdown   closeOnClick={true} trigger={   <Button color="transparent">
                                 <Title>ABOUT ME</Title>
                             </Button>}>
                                <Row style={{width:"200px"}}>
@@ -48,7 +48,7 @@ export const Home = (props) => {
                          
                         </Col>
                         <Col sm={2}>
-                            <Dropdown closeOnClick={true} trigger={<Button>
+                            <Dropdown closeOnClick={true} trigger={<Button color="transparent">
                                 <Title>PROJECTS</Title>
                             </Button>}>
                                 <Item onClick={()=>{
@@ -76,14 +76,14 @@ export const Home = (props) => {
                     <Row className="h-100" alignItems="center">
                         <Divider />
                         <div className="active">
-                            <Button className={ArrayToString(classes.btn)}>
+                            <Button color="transparent" className={ArrayToString(classes.btn)}>
                                 <Desktop />
                             </Button>
                         </div>
-                        <Button className={classes.btn}>
+                        <Button color="transparent" className={classes.btn}>
                             <Mobile />
                         </Button>
-                        <Button className={classes.btn}>
+                        <Button color="transparent" className={classes.btn}>
                             <Tablet />
                         </Button>
                         <Divider />
@@ -95,7 +95,7 @@ export const Home = (props) => {
             </Row>
         </Navbar>
         <Page ref={pageRef}>
-            <Demo />
+            <Demo querySelector={".main-page--adi"} />
         </Page>
     </div>
 }
