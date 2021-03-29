@@ -97,8 +97,10 @@ function renderCenterRule(iframe) {
     const { doc, rect, iframeRect } = resolveBoundingClient(iframe);
     doc.querySelector(".rule-center")?.remove();
     const height =rect.top;
-    doc.body.appendChild(<Rule value={height} className="rule rule-center" height={iframeRect.height+ "px"} width={1+ "px"} left={(iframeRect.width/2)+ "px"} top={0}>
-        <div style={{marginLeft:"10px",top:"10%"}} className={"rule-unit"}>{ Math.round(height)} {"px"}</div>
+    doc.body.appendChild(<Rule  className="rule rule-center" height={(iframeRect.height) +"px"} width={1+ "px"} left={(iframeRect.width/2)+ "px"} top={0}>
+        <div className="center-label">Center</div>
+        <div style={{marginLeft:"10px",top:"10%"}} className={"rule-unit"}>
+            { Math.round(height)} {"px"}</div>
     </Rule>);
 }
 function resolveBoundingClient(iframe) {

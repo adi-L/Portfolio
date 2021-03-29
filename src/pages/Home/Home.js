@@ -35,7 +35,7 @@ export const Home = (props) => {
                         </Col>
                     </Row>
                 </Col>
-                <Col sm={6}>
+                <Col sm={4}>
                     <Row className="h-100" justify={"end"} alignItems="center">
                         <Col sm={2}>
                         <Dropdown   closeOnClick={true} trigger={   <Button>
