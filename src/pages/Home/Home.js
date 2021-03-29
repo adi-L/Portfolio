@@ -7,13 +7,12 @@ import Row from "../../Grid/row/row";
 import { Desktop, Mobile, Tablet,Email } from "../../icons/icons";
 import { Demo } from "../demo/demo";
 import classes from './style.module.css';
-import bigHeadSrc from '../../assets/avatars/bighead.svg';
+import bigHeadSrc from '../../assets/avatars/adi.jpg';
 import { ArrayToString } from "../../utilis/Array";
 import { Input } from "../../components/input/input";
 import { Title } from "../../components/Title/Title";
 import { createRef } from "../../../jsx-render/client/client";
 import { Dropdown, Item } from "../../components/Dropdowns/dropdownV1/Dropdown";
-import { Heading } from "../../components/heading/heading";
 
 export const Home = (props) => {
     const pageRef = createRef();
@@ -28,9 +27,9 @@ export const Home = (props) => {
             inputScreenWidth.value = pageRef.element.offsetWidth + "px";
         }} />
         <Navbar >
-            <Row className="h-100" justify={"end"} alignItems="center">
-                <Col style={{ maxWidth: "50px" }} sm={2} lg={1} >
-                    <Row style={{ height: "100%" }} alignItems="center">
+            <Row  className="h-100" justify={"end"} alignItems="center">
+                <Col  sm={1} lg={1} >
+                    <Row style={{ height: "100%",width:"50px" }} alignItems="center">
                         <Col>
                         </Col>
                         <Col>
@@ -38,25 +37,19 @@ export const Home = (props) => {
                         </Col>
                     </Row>
                 </Col>
-                <Col sm={4}>
-                    <Row className="h-100" justify={"end"} alignItems="center">
+                <Col lg={6} md={8} sm={12}>
+                    <Row className="h-100"  justify={"end"} alignItems="center">
                         <Col sm={2}>
                             <Dropdown closeOnClick={true} trigger={<Button color="transparent">
                                 <Title >CONTACT ME</Title>
                             </Button>}>
-
-                                <Row style={{ width: "200px", padding: "10px" }}>
-                                    {/* <Col sm={12}>
-                                        <Heading style={{color:"var(--primary)"}}>Contact</Heading>
-                                    </Col> */}
-                                    <Col sm={12}><a href="mailto:adilev3344@gmail.com">
-                                        <Button style={{ fontSize: "12px", color: "black" }}  color="transparent">
-                                           <Row gap="10px" alignItems="center">
-                                           <Email/> My Email
-                                           </Row>
-                                        </Button>
-                                    </a></Col>
-                                </Row>
+                            <Item onClick={() => {
+                                    const a = document.createElement("a");
+                                    a.target = "_blank";
+                                    a.href = "mailto:adilev3344@gmail.com";
+                                    a.click();
+                                }}>My Email</Item>
+                               
                             </Dropdown>
 
                         </Col>

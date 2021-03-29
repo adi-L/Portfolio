@@ -14,6 +14,7 @@ h1{
     border: solid 1px #0080cfc9;
     position: relative;
     overflow: initial;
+    padding: 8px;
   
 
 }
@@ -47,7 +48,7 @@ display: block;
     top: 50%;
   }
 .text-primary{
-    color: #0081CF;
+    color: var(--primary);
 }
 .dot{
     border-radius: 50px;
