@@ -7,7 +7,9 @@
     fill: var(--primary) !important;
     position: relative; 
 }
-
+.tippy-box{
+  font-family: Arial, Helvetica, sans-serif;
+}
 .active:after {
     position: absolute;
     content: '';

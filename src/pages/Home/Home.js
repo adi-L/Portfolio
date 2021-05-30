@@ -13,6 +13,11 @@ import { Input } from "../../components/input/input";
 import { Title } from "../../components/Title/Title";
 import { createRef } from "../../../jsx-render/client/client";
 import { Dropdown, Item } from "../../components/Dropdowns/dropdownV1/Dropdown";
+import tippy from 'tippy.js';
+import 'tippy.js/dist/tippy.css'; // optional for styling
+import 'tippy.js/animations/scale.css';
+import 'tippy.js/themes/light.css';
+
 
 export const Home = (props) => {
     const pageRef = createRef();
@@ -21,7 +26,31 @@ export const Home = (props) => {
         requestAnimationFrame(() => {
             inputScreenWidth.value = pageRef.element.offsetWidth + "px"
         })
-    })
+    });
+    const desktop = <Button color="transparent" className={ArrayToString(classes.btn)}>
+    <Desktop  />
+</Button> ;
+    tippy(desktop, {
+        content: 'Desktop',
+        animation:"scale",
+        theme: 'light',
+      });
+      const tablet = <Button color="transparent" className={classes.btn}>
+      <Tablet />
+  </Button>
+ tippy(tablet, {
+    content: 'Tablet',
+    animation:"scale",
+    theme: 'light',
+  });
+      const mobile =  <Button color="transparent" className={classes.btn}>
+      <Mobile />
+      </Button>
+      tippy(mobile, {
+        content: 'Mobile',
+        animation:"scale",
+        theme: 'light',
+      });
     return <div>
         <img style={{ display: "none" }} src={bigHeadSrc} onLoad={function () {
             inputScreenWidth.value = pageRef.element.offsetWidth + "px";
@@ -82,16 +111,10 @@ export const Home = (props) => {
                     <Row className="h-100" alignItems="center">
                         <Divider />
                         <div className="active">
-                            <Button color="transparent" className={ArrayToString(classes.btn)}>
-                                <Desktop />
-                            </Button>
+                                {desktop}
                         </div>
-                        <Button color="transparent" className={classes.btn}>
-                            <Mobile />
-                        </Button>
-                        <Button color="transparent" className={classes.btn}>
-                            <Tablet />
-                        </Button>
+                       {mobile}
+                        {tablet}
                         <Divider />
                         {inputScreenWidth}
                         <Divider />
