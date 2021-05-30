@@ -108,7 +108,11 @@ export function Dropdown(props) {
             icon.classList.remove(classes.open);
         }
         if (backdrop) {
-            backdrop.remove();
+            backdrop.classList.add(classes.remove)
+            setTimeout(() => {
+                backdrop.remove();
+
+            }, 300);
         }
     }
 }
