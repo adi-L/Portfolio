@@ -52,7 +52,22 @@
         restored-item-animation .3s forwards;
         
 }
+.remove{
+    animation: 
+        /*make sure to open space up before bringing the item into position*/
+        remove-item-animation .3s forwards; 
+}
+@keyframes remove-item-animation {
+    from {
+        margin-top: 0;
+        opacity: 1;
+    }
 
+    to {
+        margin-top: 10px;
+        opacity: 0;
+    }
+}
 @keyframes restored-item-animation {
     from {
         margin-top: -10px;
