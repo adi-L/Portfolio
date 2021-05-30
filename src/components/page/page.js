@@ -6,9 +6,9 @@ import classes from './style.module.css';
 export const Page = (props) => {
     return <Row alignItems="center" className={ArrayToString(classes.main)}>
         <main {...props} className={ArrayToString(classes.page, "page-demo")}>
-            <Row alignItems="Center" justify="end" className={classes.header}>
+            <Row alignItems="Center" justify="flex-start" className={classes.header}>
                 <Col className="hide_on_mobile" style={{ margin: "4px" }} sm={4}>
-                    <Row style={{ marginLeft: "10px" }} gap="10px" justify="end">
+                    <Row style={{ marginLeft: "10px" }} gap="10px" justify="flex-start">
                         <Col className={classes.dot1} sm={1}></Col>
                         <Col className={classes.dot1} sm={1}></Col>
                         <Col className={classes.dot1} sm={1}></Col>

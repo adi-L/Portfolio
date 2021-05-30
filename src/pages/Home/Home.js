@@ -56,7 +56,7 @@ export const Home = (props) => {
             inputScreenWidth.value = pageRef.element.offsetWidth + "px";
         }} />
         <Navbar >
-            <Row  className="h-100" justify={"end"} alignItems="center">
+            <Row  className="h-100" justify={"flex-start"} alignItems="center">
                 <Col  sm={1} lg={1} >
                     <Row style={{ height: "100%",width:"50px" }} alignItems="center">
                         <Col>
@@ -67,7 +67,7 @@ export const Home = (props) => {
                     </Row>
                 </Col>
                 <Col lg={6} md={8} sm={12}>
-                    <Row className="h-100"  justify={"end"} alignItems="center">
+                    <Row className="h-100"  justify={"flex-start"} alignItems="center">
                         <Col sm={2}>
                             <Dropdown closeOnClick={true} trigger={<Button color="transparent">
                                 <Title >CONTACT ME</Title>

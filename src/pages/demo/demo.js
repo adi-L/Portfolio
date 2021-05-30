@@ -30,7 +30,7 @@ export const Demo = (props) => {
                     <p className="block-element ">And I'm a Web Developer</p>
                     <Dropdown pose="top" color="primary" className="about-me-btn" title="About Me">
                         <div className="about-me-modal">
-                            <Row justify="end" alignItems="center">
+                            <Row justify="flex-start" alignItems="center">
                             <Heading style={{color:"var(--primary)"}}>Hi I'm Adi,</Heading>
                             </Row>
                             <div style={{margin:"30px 0"}}>
@@ -46,7 +46,7 @@ export const Demo = (props) => {
               </p>
                                 </div> 
              
-              <Row  justify="end" >
+              <Row  justify="flex-start" >
                   <Col title="coffee" sm={1}>☕ |</Col>
                   <Col title="code"  sm={1}>👨‍💻 |</Col>
                   <Col title="music"  sm={1}>🎵</Col>
