@@ -57,16 +57,14 @@ export const Home = (props) => {
         }} />
         <Navbar >
             <Row  className="h-100" justify={"flex-start"} alignItems="center">
-                <Col  sm={1} lg={1} >
+                <Col style={{maxWidth:"50px"}} sm={1} lg={1} >
                     <Row style={{ height: "100%",width:"50px" }} alignItems="center">
-                        <Col>
-                        </Col>
-                        <Col>
-                            <img className={classes.avatar} alt="avatar" src={bigHeadSrc} />
-                        </Col>
+                        <img className={classes.avatar} alt="avatar" src={bigHeadSrc} />
                     </Row>
+                    
                 </Col>
-                <Col lg={6} md={8} sm={12}>
+                <Divider />
+                <Col style={{marginLeft:"20px"}} lg={6} md={8} sm={12}>
                     <Row className="h-100"  justify={"flex-start"} alignItems="center">
                         <Col sm={2}>
                             <Dropdown closeOnClick={true} trigger={<Button color="transparent">
