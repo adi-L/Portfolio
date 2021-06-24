@@ -4,7 +4,7 @@ import { Navbar } from "../../components/navbar/navbar"
 import { Page } from '../../components/page/page';
 import Col from "../../Grid/cols/Col";
 import Row from "../../Grid/row/row";
-import { Desktop, Mobile, Tablet,Email } from "../../icons/icons";
+import { Desktop, Mobile, Tablet, Email } from "../../icons/icons";
 import { Demo } from "../demo/demo";
 import classes from './style.module.css';
 import bigHeadSrc from '../../assets/avatars/adi.jpg';
@@ -28,55 +28,55 @@ export const Home = (props) => {
         })
     });
     const desktop = <Button color="transparent" className={ArrayToString(classes.btn)}>
-    <Desktop  />
-</Button> ;
+        <Desktop />
+    </Button>;
     tippy(desktop, {
         content: 'Desktop',
-        animation:"scale",
+        animation: "scale",
         theme: 'light',
-      });
-      const tablet = <Button color="transparent" className={classes.btn}>
-      <Tablet />
-  </Button>
- tippy(tablet, {
-    content: 'Tablet',
-    animation:"scale",
-    theme: 'light',
-  });
-      const mobile =  <Button color="transparent" className={classes.btn}>
-      <Mobile />
-      </Button>
-      tippy(mobile, {
+    });
+    const tablet = <Button color="transparent" className={classes.btn}>
+        <Tablet />
+    </Button>
+    tippy(tablet, {
+        content: 'Tablet',
+        animation: "scale",
+        theme: 'light',
+    });
+    const mobile = <Button color="transparent" className={classes.btn}>
+        <Mobile />
+    </Button>
+    tippy(mobile, {
         content: 'Mobile',
-        animation:"scale",
+        animation: "scale",
         theme: 'light',
-      });
+    });
     return <div>
         <img style={{ display: "none" }} src={bigHeadSrc} onLoad={function () {
             inputScreenWidth.value = pageRef.element.offsetWidth + "px";
         }} />
         <Navbar >
-            <Row  className="h-100" justify={"flex-start"} alignItems="center">
-                <Col style={{maxWidth:"50px"}} sm={1} lg={1} >
-                    <Row style={{ height: "100%",width:"50px" }} alignItems="center">
+            <Row className="h-100" justify={"flex-start"} alignItems="center">
+                <Col style={{ maxWidth: "50px" }} sm={1} lg={1} >
+                    <Row style={{ height: "100%", width: "50px" }} alignItems="center">
                         <img className={classes.avatar} alt="avatar" src={bigHeadSrc} />
                     </Row>
-                    
+
                 </Col>
                 <Divider />
-                <Col style={{marginLeft:"20px"}} lg={6} md={8} sm={12}>
-                    <Row className="h-100"  justify={"flex-start"} alignItems="center">
+                <Col style={{ marginLeft: "20px" }} lg={6} md={8} sm={12}>
+                    <Row className="h-100" justify={"flex-start"} alignItems="center">
                         <Col sm={2}>
                             <Dropdown closeOnClick={true} trigger={<Button color="transparent">
                                 <Title >CONTACT ME</Title>
                             </Button>}>
-                            <Item onClick={() => {
+                                <Item onClick={() => {
                                     const a = document.createElement("a");
                                     a.target = "_blank";
                                     a.href = "mailto:adilev3344@gmail.com";
                                     a.click();
                                 }}>My Email</Item>
-                               
+
                             </Dropdown>
 
                         </Col>
@@ -85,11 +85,13 @@ export const Home = (props) => {
                                 <Title>PROJECTS</Title>
                             </Button>}>
                                 <Item onClick={() => {
-                                    const a = document.createElement("a");
-                                    a.target = "_blank";
-                                    a.href = "https://www.npmjs.com/package/styleit-api";
+                                    const a = <a target="_blank" href="https://www.npmjs.com/package/styleit-api" />
                                     a.click();
                                 }}>StyleIt API</Item>
+                                <Item onClick={() => {
+                                    const a = <a target="_blank" href="https://www.npmjs.com/package/spliter-html" />
+                                    a.click();
+                                }}>Split-html</Item>
                                 <Item >Coming Soon...</Item>
 
                             </Dropdown>
@@ -109,9 +111,9 @@ export const Home = (props) => {
                     <Row className="h-100" alignItems="center">
                         <Divider />
                         <div className="active">
-                                {desktop}
+                            {desktop}
                         </div>
-                       {mobile}
+                        {mobile}
                         {tablet}
                         <Divider />
                         {inputScreenWidth}
