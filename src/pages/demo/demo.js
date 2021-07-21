@@ -31,26 +31,26 @@ export const Demo = (props) => {
                     <Dropdown pose="top" color="primary" className="about-me-btn" title="About Me">
                         <div className="about-me-modal">
                             <Row justify="flex-start" alignItems="center">
-                            <Heading style={{color:"var(--primary)"}}>Hi I'm Adi,</Heading>
+                                <Heading style={{ color: "var(--primary)" }}>Hi I'm Adi,</Heading>
                             </Row>
-                            <div style={{margin:"30px 0"}}>
-                            <p>
-              I have passion for creating a dynamic user experience. 
-           
-              </p>
-              <p>
-              Creativity is my guiding light and it always my goal.
-              </p>
-              <p>
-              I love turning a complex problem into simple intuitive Solutions.
-              </p>
-                                </div> 
-             
-              <Row  justify="flex-start" >
-                  <Col title="coffee" sm={1}>☕ |</Col>
-                  <Col title="code"  sm={1}>👨‍💻 |</Col>
-                  <Col title="music"  sm={1}>🎵</Col>
-              </Row>
+                            <div style={{ margin: "30px 0" }}>
+                                <p>
+                                    Frontend is all my passions, especially create creative tools  for the web with love and unique inventions.
+                                </p>
+                                <p>
+                                    Creativity is my guiding light and it always my goal.
+                                </p>
+                                <p>
+                                    my specialties include quickly learning new skills and solving problems, website optimization.<br/>
+                                    I Love to use JavaScript, JSX, React, Webpack, HTML, CSS, NodeJS, C#, SQL, MongoDB, GitHub/Git
+                                </p>
+                            </div>
+
+                            <Row justify="flex-start" >
+                                <Col title="coffee" sm={1}>☕ |</Col>
+                                <Col title="code" sm={1}>👨‍💻 |</Col>
+                                <Col title="music" sm={1}>🎵</Col>
+                            </Row>
                         </div>
                     </Dropdown>
                     <div className="dot dot-top-left"></div>
