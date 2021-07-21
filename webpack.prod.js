@@ -4,6 +4,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const WorkboxPlugin = require('workbox-webpack-plugin');
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = (env, argv) => {
     return merge(common(env, argv), {
@@ -20,6 +21,9 @@ module.exports = (env, argv) => {
         },
         devtool: false,
         plugins: [
+            new HtmlWebpackPlugin({
+                template: "./src/index.html",
+              }),
             new MiniCssExtractPlugin(),
             new webpack.SourceMapDevToolPlugin({
                 filename: '[name].js.map',
