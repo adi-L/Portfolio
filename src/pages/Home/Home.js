@@ -92,6 +92,18 @@ export const Home = (props) => {
                                     const a = <a target="_blank" href="https://www.npmjs.com/package/spliter-html" />
                                     a.click();
                                 }}>Split-html</Item>
+                                   <Item onClick={() => {
+                                    const a = <a target="_blank" href="https://www.npmjs.com/package/@creaditor/countdown" />
+                                    a.click();
+                                }}>Countdown web component</Item>
+                                  <Item onClick={() => {
+                                    const a = <a target="_blank" href="https://github.com/adi-L/starNode-rts" />
+                                    a.click();
+                                }}>rts game - using canvas.</Item>
+                                 <Item onClick={() => {
+                                    const a = <a target="_blank" href="https://www.webizzart.com/" />
+                                    a.click();
+                                }}>Webizzart - he</Item>
                                 <Item >Coming Soon...</Item>
 
                             </Dropdown>
