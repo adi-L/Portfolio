@@ -26,7 +26,7 @@
 .btn-check:focus+.btn,
 .btn:focus {
     outline: 0;
-    /* box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, .25); */
+    box-shadow: 0 0 0 0.105rem rgba(13, 110, 253, .25);
 }
 
 [type=button]:not(:disabled),

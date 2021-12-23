@@ -75,8 +75,13 @@ export const Home = (props) => {
                                     a.target = "_blank";
                                     a.href = "mailto:adilev3344@gmail.com";
                                     a.click();
-                                }}>My Email</Item>
-
+                                }}>Email</Item>
+          <Item onClick={() => {
+                                    const a = document.createElement("a");
+                                    a.target = "_blank";
+                                    a.href = "https://github.com/adi-L";
+                                    a.click();
+                                }}>Github</Item>  
                             </Dropdown>
 
                         </Col>
@@ -85,17 +90,13 @@ export const Home = (props) => {
                                 <Title>PROJECTS</Title>
                             </Button>}>
                                 <Item onClick={() => {
-                                    const a = <a target="_blank" href="https://www.npmjs.com/package/styleit-api" />
+                                    const a = <a target="_blank" href="https://style-it.github.io/home/" />
                                     a.click();
                                 }}>StyleIt API</Item>
                                 <Item onClick={() => {
                                     const a = <a target="_blank" href="https://www.npmjs.com/package/spliter-html" />
                                     a.click();
                                 }}>Split-html</Item>
-                                   <Item onClick={() => {
-                                    const a = <a target="_blank" href="https://www.npmjs.com/package/@creaditor/countdown" />
-                                    a.click();
-                                }}>Countdown web component</Item>
                                   <Item onClick={() => {
                                     const a = <a target="_blank" href="https://github.com/adi-L/starNode-rts" />
                                     a.click();

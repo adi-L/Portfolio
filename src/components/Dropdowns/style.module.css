@@ -110,6 +110,10 @@
     background-color: rgba(241, 239, 239, 0.212);    
     color: var(--primary);
 }
+.item:focus{
+    background-color: rgba(241, 239, 239, 0.212);    
+    color: var(--primary);
+}
 .divider{
     height: 1px;
     width: 100%;

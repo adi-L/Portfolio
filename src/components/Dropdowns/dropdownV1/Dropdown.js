@@ -3,11 +3,12 @@ import classes from '../style.module.css';
 import Row from "../../../Grid/row/row";
 import Col from "../../../Grid/cols/Col";
 import { ArrayToString } from "../../../utilis/Array";
+import { Hooks } from "../../hooks/hooks";
 
 export function Dropdown(props) {
     let _content;
     let isOpen = false;
-    const { pose = "bottom", className = "", trigger, offset, context = { className: "" },closeOnClick = false } = props;
+    const { pose = "bottom", className = "", trigger, offset, context = { className: "" }, closeOnClick = false } = props;
     const onToggle = (e) => {
         const icon = component.querySelector(`.${classes.icon}`);
         if (icon) {
@@ -23,7 +24,7 @@ export function Dropdown(props) {
             }
 
             const minWidth = rect.width + "px";
-            _content = <div className={ArrayToString(classes.backdrop, "part-of-block", "ignore-events", "no-select")}>
+            _content = <div  className={ArrayToString(classes.backdrop, "part-of-block", "ignore-events", "no-select")}>
                 <div className={["adi-plugin", "part-of-block", context.className, classes.content].join(" ")} style={{ left: x, top: y, "min-width": minWidth }}>
                     {props.children}
                 </div>
@@ -43,8 +44,8 @@ export function Dropdown(props) {
                 dd.style.top = (e.pageY - pageYOffset - contentRect.height / 2) + "px";
                 dd.style.left = (e.pageX) + "px"
             }
-            if(contentRect.left < 1){
-                dd.style.left =  10 +contentRect.width /2  + "px"
+            if (contentRect.left < 1) {
+                dd.style.left = 10 + contentRect.width / 2 + "px"
             }
             _content.onclick = (e) => {
                 const target = e.target;
@@ -69,7 +70,7 @@ export function Dropdown(props) {
 
                     }
                 }
-                if(!trigger || (trigger && closeOnClick)){
+                if (!trigger || (trigger && closeOnClick)) {
                     closeDropdown(icon, _content);
                 }
             };
@@ -118,11 +119,30 @@ export function Dropdown(props) {
 }
 export function Item(props) {
     const { className = "", data = {} } = props;
-    const tempalte = <div {...props} data-value={props.value || ""} className={ArrayToString(classes.item, "adi-plugin", className)}>
+    const onkeydown = (event) => {
+        const target = event.target.closest("[data-value]");
+        if (event.code === "ArrowDown" && target.parentNode.nextElementSibling) {
+            target.parentNode.nextElementSibling?.querySelector("[data-value]")?.focus();
+        } else if (event.code === "ArrowUp" && target.parentNode.previousElementSibling) {
+            target.parentNode.previousElementSibling?.querySelector("[data-value]")?.focus();
+        } else if (event.code === "Enter") {
+            if (typeof props.onClick === "function") {
+                props.onClick(target.dataset.value);
+            }
+        }
+    }
+    const tempalte = <div tabindex="0" autofocus="true" onKeydown={onkeydown} {...props} data-value={props.value || ""} className={ArrayToString(classes.item, "adi-plugin", className)}>
         {props.children}
     </div>;
     tempalte.dataValue = data;
-    return tempalte;
+    return new Hooks({
+        children: tempalte,
+        onUpdate: (that) => {
+          setTimeout(() => {
+            that.firstElementChild && that.firstElementChild.focus();
+          }, 0);
+        }
+    });
 
 }
 export const Divider = () => {
