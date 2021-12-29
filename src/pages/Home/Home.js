@@ -93,6 +93,10 @@ export const Home = (props) => {
                                     const a = <a target="_blank" href="https://style-it.github.io/home/" />
                                     a.click();
                                 }}>StyleIt API</Item>
+                                  <Item onClick={() => {
+                                    const a = <a target="_blank" href="https://www.npmjs.com/package/dragoned" />
+                                    a.click();
+                                }}>Dragoned - Sortable library</Item>
                                 <Item onClick={() => {
                                     const a = <a target="_blank" href="https://www.npmjs.com/package/spliter-html" />
                                     a.click();
