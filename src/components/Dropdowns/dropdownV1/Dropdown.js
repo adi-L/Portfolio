@@ -31,8 +31,17 @@ export function Dropdown(props) {
             </div>
             //append the dropdown content into the docoment
             document.body.appendChild(_content);
-
+            const firstItem = _content.querySelector(`.${classes.item}`);
+            if(firstItem){
+                firstItem.focus();
+            }
             const dd = _content.firstElementChild;
+            _content.addEventListener("keyup",(event)=>{
+                debugger
+                if(event.code === "Escape") {
+                    closeDropdown(icon, _content);
+                }
+            })
             const contentRect = dd.getBoundingClientRect();
             dd.style.left = (parseInt(dd.style.left) + rect.width / 2) + "px"
             if (typeof offset === "number") {
@@ -121,28 +130,21 @@ export function Item(props) {
     const { className = "", data = {} } = props;
     const onkeydown = (event) => {
         const target = event.target.closest("[data-value]");
-        if (event.code === "ArrowDown" && target.parentNode.nextElementSibling) {
-            target.parentNode.nextElementSibling?.querySelector("[data-value]")?.focus();
-        } else if (event.code === "ArrowUp" && target.parentNode.previousElementSibling) {
-            target.parentNode.previousElementSibling?.querySelector("[data-value]")?.focus();
+        if (event.code === "ArrowDown" && target.nextElementSibling) {
+            target.nextElementSibling?.focus();
+        } else if (event.code === "ArrowUp" && target.previousElementSibling) {
+            target.previousElementSibling?.focus();
         } else if (event.code === "Enter") {
             if (typeof props.onClick === "function") {
                 props.onClick(target.dataset.value);
             }
         }
     }
-    const tempalte = <div tabindex="0" autofocus="true" onKeydown={onkeydown} {...props} data-value={props.value || ""} className={ArrayToString(classes.item, "adi-plugin", className)}>
+    const tempalte = <div tabindex="0"  onKeydown={onkeydown} {...props} data-value={props.value || ""} className={ArrayToString(classes.item, "adi-plugin", className)}>
         {props.children}
     </div>;
     tempalte.dataValue = data;
-    return new Hooks({
-        children: tempalte,
-        onUpdate: (that) => {
-          setTimeout(() => {
-            that.firstElementChild && that.firstElementChild.focus();
-          }, 0);
-        }
-    });
+    return tempalte;
 
 }
 export const Divider = () => {
