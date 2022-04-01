@@ -4,8 +4,8 @@ import { Dropdown } from '../../components/Dropdowns/dropdownV1/Dropdown';
 import { Heading } from '../../components/heading/heading';
 import Row from '../../Grid/row/row';
 import Col from '../../Grid/cols/Col';
-import Resizable from '../../resizer';
-import { createRef } from '../../../jsx-render/client/client';
+import Resizable from '../../plugins/resizer';
+import Draggable from '../../plugins/Draggable';
 export const Demo = (props) => {
     const { querySelector } = props;
 
@@ -49,6 +49,17 @@ export const Demo = (props) => {
             const container = document.querySelector(querySelector);
             renderRules(container);
             window.addEventListener("resize", OnResize);
+            new Draggable(".adi-block",{
+                maxTop:0,
+                container:document.querySelector(".page-body"),
+                onDrag:({target,container,left,top})=>{
+                    target.style.left = left + "px";
+                    target.style.top = top + "px";
+                },
+                onEnd:({target,container,left,top}) =>{
+                
+                }
+            });
             new Resizable(".adi-block", {
                 container: document.body,
                 minWidth: 100,
@@ -71,7 +82,7 @@ export const Demo = (props) => {
             
             })
         },
-        children: <div style={{ height: "100%", width: "100%" }}>
+        children: <div className="page-body" style={{ height: "100%", width: "100%" }}>
             <style>
                 {style}
             </style>

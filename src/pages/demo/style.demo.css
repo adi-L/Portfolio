@@ -49,32 +49,6 @@ display: block;
 .text-primary{
     color: var(--primary);
 }
-.dot{
-    border-radius: 50px;
-    width: 7px;
-    height: 7px;
-    background: #fff;
-    position: absolute; 
-    transform: translate(-50%,-50%);
-    border: 1px solid;
-}
-.dot-top-left{
-    left: 0;
-    top: 0; 
-    cursor:nwse-resize;
-}
-.dot-top-right{
-    left: 100%;
-    top: 0; 
-}
-.dot-bottom-left{
-    left: 100%;
-    top: 100%; 
-}
-.dot-bottom-right{
-    left: 0;
-    top: 100%; 
-}
 .rule{
     border: 1px;
     height: 1px;
@@ -182,16 +156,15 @@ border-top: 1px dashed rgb(197, 89, 211);;
     position: absolute;
     left: 20%;
     top: 35%;
-    /* transform: translateY(-50%); */
-    /* transform: translate(-100%,-50%); */
+
     width: 600px;
     max-width: 90%;
 }
 
 @media only screen and (max-width: 900px) {
     .adi-block{
-        left: 50%;
-        transform: translate(-50%,-50%);
+        left: 50% !important;
+        transform: translateX(-50%) !important;
 
     }
   }

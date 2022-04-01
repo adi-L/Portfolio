@@ -72,12 +72,14 @@ class Resizable {
             this.container.addEventListener("scroll", this.rePosition);
             window.addEventListener("scroll", this.rePosition);
             window.addEventListener("resize", this.rePosition);
+            this.element.addEventListener("drag", this.rePosition);
         } else {
             this.resizers.forEach(resizer => resizer.remove());
             this.borders.forEach(border => border.remove());
             this.container.removeEventListener("scroll", this.rePosition);
             window.removeEventListener("scroll", this.rePosition);
             window.removeEventListener("resize", this.rePosition);
+            this.element.removeEventListener("drag", this.rePosition);
         }
     }
     stopResize() {
