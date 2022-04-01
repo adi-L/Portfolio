@@ -6,18 +6,17 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     background-color: #fff;
     z-index: 1;
+    border: solid 1px rgba(0, 0, 0, 0.308);
+    position: relative;
+    overflow: initial;
+    padding: 8px;
+  width: 300px;
+  height: 250px;
 }
 h1{
     font-size: 3rem;
 }
-.selected-element{
-    border: solid 1px #0080cfc9;
-    position: relative;
-    overflow: initial;
-    padding: 8px;
-  
 
-}
 #client-rect-of-element {
     position: absolute;
     top: 0;
